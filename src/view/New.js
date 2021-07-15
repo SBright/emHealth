@@ -4,7 +4,7 @@ const New = () => {
     return(
         <div className='coming-soon-contain'>
             <div>
-                <div>
+                <div className='emclass-logo-contain'>
                     <img src={img_emclass_logo}></img>
                 </div>
                 <div className='separate-line'>
