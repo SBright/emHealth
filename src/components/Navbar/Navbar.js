@@ -33,7 +33,7 @@ const Navbar = () => {
                                             <li className="nav-item active"> <a onClick={(e) => { e.preventDefault(); setMobileSubMenuServiceOpen(!mobile_sub_menu_service_open) }} className="nav-link" href="">Services <img src={img_dropdown_arrow_icon} alt="" /></a>
                                                 <Collapse in={mobile_sub_menu_service_open}>
                                                     <ul className="sub-menu" style={mobile_sub_menu_service_open ? { display: 'block' } : {}}>
-                                                        <li className=""><a onClick={(e) => { close_mobile_menu(e) }} href="#">emClass</a></li>
+                                                        <li className=""><a onClick={(e) => { close_mobile_menu(e); history.push('/emcalss'); }} href="#">emClass</a></li>
                                                         <li className=""><a href="https://emborrow.com/">emBorrow</a></li>
                                                     </ul>
                                                 </Collapse>
