@@ -134,7 +134,7 @@ const Home = () => {
                                                     you may be facing. Lack of centralized, curated information? No readily available tools? We started
                                                     emHealth based on the challenges we have faced during our own journey.</p>
                                                 <div className="btn-section">
-                                                    <h4><a href=""> Learn Why<span><img src={img_arrow} alt="" /></span></a></h4>
+                                                    <h4><a href="" onClick={(e) => { e.preventDefault(); history.push('/why-us') }}> Learn Why<span><img src={img_arrow} alt="" /></span></a></h4>
                                                 </div>
                                             </div>
                                         </Fade>
@@ -147,7 +147,7 @@ const Home = () => {
                                                 you may be facing. Lack of centralized, curated information? No readily available tools? We started
                                                 emHealth based on the challenges we have faced during our own journey.</p>
                                             <div className="btn-section">
-                                                <h4><a href=""> Learn Why<span><img src={img_arrow} alt="" /></span></a></h4>
+                                                <h4><a href="" onClick={(e) => { e.preventDefault(); history.push('/why-us') }}> Learn Why<span><img src={img_arrow} alt="" /></span></a></h4>
                                             </div>
                                         </div>
                                     </MobileView>
@@ -198,7 +198,7 @@ const Home = () => {
                                                 experience with your advisors who will share their crafts, medical knowledge, and personal
                                                 experiences.</p>
                                             <div className="btn-section">
-                                                <h4><a href="">Learn More<span><img src={img_arrow} alt="" /></span></a></h4>
+                                                <h4><a href="" onClick={(e) => { e.preventDefault(); history.push('/emcalss') }}>Learn More<span><img src={img_arrow} alt="" /></span></a></h4>
                                             </div>
                                         </div>
                                     </Fade>
@@ -226,7 +226,7 @@ const Home = () => {
                                             experience with your advisors who will share their crafts, medical knowledge, and personal
                                             experiences.</p>
                                         <div className="btn-section">
-                                            <h4><a href="">Learn More<span><img src={img_arrow} alt="" /></span></a></h4>
+                                            <h4><a href="" onClick={(e) => { e.preventDefault(); history.push('/emcalss') }}>Learn More<span><img src={img_arrow} alt="" /></span></a></h4>
                                         </div>
                                     </div>
                                 </div>

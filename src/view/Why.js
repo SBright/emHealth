@@ -422,9 +422,9 @@ const Why = () => {
                                         <a href="mailto:information@emhealthfertility.com">Contact Us</a> 
                                     </nav>
                                     <nav className="nav-footer justify-content-center pt-20">
-                                        <a href="https://www.instagram.com/emborrow/"><img src={img_ig} alt="" /></a>
-                                        <a href="https://www.facebook.com/emBorrow/"><img src={img_fb} alt="" /></a>
-                                        <a href="https://www.linkedin.com/company/emborrow/"><img src={img_lk} alt="" /></a> 
+                                        <a target="_blank" href="https://www.instagram.com/emborrow/"><img src={img_ig} alt="" /></a>
+                                        <a target="_blank" href="https://www.facebook.com/emBorrow/"><img src={img_fb} alt="" /></a>
+                                        <a target="_blank" href="https://www.linkedin.com/company/emborrow/"><img src={img_lk} alt="" /></a> 
                                     </nav>
                                 </div>
                             </div>
