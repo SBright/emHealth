@@ -1,14 +1,18 @@
 import React, { useEffect, useState } from 'react';
+import Modal from 'react-bootstrap/Modal';
 import Collapse from 'react-bootstrap/Collapse'
 import img_logo from '../../assets/images/logo.svg';
 import img_dropdown_arrow_icon from '../../assets/images/dropdown-arrow.svg';
+import img_contact_location from '../../assets/images/location.svg';
+import img_contact_phone from '../../assets/images/phone.svg';
 import { useHistory } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = (props) => {
 
     const [mobile_menu_open, setMobileMenuOpen] = useState(false);
     const [mobile_sub_menu_service_open, setMobileSubMenuServiceOpen] = useState(false);
     const [mobile_sub_menu_about_open, setMobileSubMenuAboutOpen] = useState(false);
+    const [contact_modal_open, setContactModalOpen] = useState(false);
 
     const history = useHistory();
 
@@ -16,6 +20,12 @@ const Navbar = () => {
         event.preventDefault(); 
         setMobileMenuOpen(false); 
     }
+
+    useEffect(() => {
+        console.log('hello >>>>')
+        if(props.modalStatus)
+            setContactModalOpen(true)
+    }, [props.modalStatus])
 
     return (
         <div className="header-nav">
@@ -33,8 +43,8 @@ const Navbar = () => {
                                             <li className="nav-item active"> <a onClick={(e) => { e.preventDefault(); setMobileSubMenuServiceOpen(!mobile_sub_menu_service_open) }} className="nav-link" href="">Services <img src={img_dropdown_arrow_icon} alt="" /></a>
                                                 <Collapse in={mobile_sub_menu_service_open}>
                                                     <ul className="sub-menu" style={mobile_sub_menu_service_open ? { display: 'block' } : {}}>
-                                                        <li className=""><a onClick={(e) => { close_mobile_menu(e); history.push('/emcalss'); }} href="#">emClass</a></li>
-                                                        <li className=""><a href="https://emborrow.com/">emBorrow</a></li>
+                                                        <li className=""><a target="_blank" href='/emclass'>emClass</a></li>
+                                                        <li className=""><a target="_blank" href="https://emborrow.com/">emBorrow</a></li>
                                                     </ul>
                                                 </Collapse>
                                             </li>
@@ -42,7 +52,7 @@ const Navbar = () => {
                                                 <Collapse in={mobile_sub_menu_about_open}>
                                                     <ul className="sub-menu" style={mobile_sub_menu_about_open ? { display: 'block' } : {}}>
                                                         <li><a onClick={(e) => { close_mobile_menu(e); history.push('/why-us') }} href="#">Why emHealth</a></li>
-                                                        <li><a href="mailto:information@emhealthfertility.com">Contact Us</a></li>
+                                                        <li><a onClick={(e) => { e.preventDefault(); setContactModalOpen(true) }}>Contact Us</a></li>
                                                     </ul>
                                                 </Collapse>
                                             </li>
@@ -54,6 +64,77 @@ const Navbar = () => {
                     </div>
                 </div>
             </div>
+            <Modal 
+                dialogClassName='contact-modal-content'
+                centered
+                show={contact_modal_open}
+                animation={true}
+                onHide={() => {setContactModalOpen(false)}}
+            >
+                <div className='contact-modal-contain'>
+                    <div className='header'>
+                        <div className='close-button' onClick={() => setContactModalOpen(false)}>
+                            Close
+                        </div>
+                    </div>
+                    <div className='row'>
+                        <div className='col-md-5 title'>
+                            Contact Us
+                        </div>
+                    </div>
+                    <div className='row'>
+                        <div className='col-md-5 contact-info'>
+                            <div className='contact-info-item'>
+                                <img src={img_contact_location}></img>
+                                <div className='description'>
+                                    2100 Sanders Rd – Suite 200
+                                    Northbrook, IL 60062
+                                </div>
+                            </div>
+                            <div className='contact-info-item'>
+                                <img src={img_contact_phone}></img>
+                                <div className='description'>
+                                    1-866-3-EMBRYO
+                                    1-866-336-2796
+                                </div>
+                            </div>
+                        </div>
+                        <div className='col-md-7'>
+                            <div className='input-item'>
+                                <div className='label'>
+                                    Name
+                                </div>
+                                <div className='input-name-contain'>
+                                    <input type='text' className='input-element' placeholder='First Name'></input>
+                                    <input type='text' className='input-element' placeholder='Last Name'></input>
+                                </div>
+                            </div>
+                            <div className='input-item'>
+                                <div className='label'>
+                                    Email
+                                </div>
+                                <input type='email' className='input-element' placeholder='Enter Email'></input>
+                            </div>
+                            <div className='input-item'>
+                                <div className='label'>
+                                    Subject
+                                </div>
+                                <input type='text' className='input-element' placeholder='Enter Subject'></input>
+                            </div>
+                            <div className='input-item'>
+                                <div className='label'>
+                                    Message
+                                </div>
+                                <textarea className='input-element text-area' placeholder='Enter Message'>
+                                </textarea>
+                            </div>
+                            <div className='submit-button'>
+                                Submit
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </Modal>
         </div>
     )
 }

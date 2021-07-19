@@ -4,6 +4,8 @@ import Navbar from '../components/Navbar/Navbar';
 import Parallax, { Layer } from "react-parallax-scroll";
 import { BrowserView, MobileView } from "react-device-detect";
 import Fade from 'react-reveal/Fade';
+// import Popup from 'reactjs-popup';
+import 'reactjs-popup/dist/index.css';
 import img_arrow from '../assets/images/arrow.svg';
 import img_main_1 from '../assets/images/image1.png';
 import img_main_2 from '../assets/images/image2.png';
@@ -19,10 +21,20 @@ const Home = () => {
 
     const history = useHistory();
 
+    const [contact_modal_open, setContactModalOpen] = useState(false);
+
+    const contact_modal = (e) => {
+        e.preventDefault(); 
+        setContactModalOpen(true); 
+        setTimeout(() => {
+            setContactModalOpen(false);
+        }, 100);  
+    }
+
     return (
         <Parallax>
             <header className="header-area header-area ">
-                <Navbar></Navbar>
+                <Navbar modalStatus={contact_modal_open}></Navbar>
                 <div className="header-content-area header-content-area ">
                     <div className="container">
                         <div className="row">
@@ -47,9 +59,7 @@ const Home = () => {
                     <div className="row">
                         <div className="col-lg-6">
                             <div className="partners-image">
-                                <Layer settings={{ speed: -0.2, type: ["translateX"] }}>
-                                    <img src={img_main_1} alt="partners" />
-                                </Layer>
+                                <img src={img_main_1} alt="partners" />
                             </div>
                         </div>
                         <div className="col-lg-6">
@@ -68,7 +78,7 @@ const Home = () => {
                                                 always
                                                 seek to expand the value we provide to our community members.</p>
                                             <div className="btn-section">
-                                                <h4><a href="mailto:information@emhealthfertility.com"> Contact Us<span><img src={img_arrow} alt="" /></span></a></h4>
+                                                <h4><a href="#" onClick={(e) => contact_modal(e) }> Contact Us<span><img src={img_arrow} alt="" /></span></a></h4>
                                             </div>
                                         </div>
                                     </Fade>
@@ -94,7 +104,7 @@ const Home = () => {
                                             always
                                             seek to expand the value we provide to our community members.</p>
                                         <div className="btn-section">
-                                            <h4><a href="mailto:information@emhealthfertility.com"> Contact Us<span><img src={img_arrow} alt="" /></span></a></h4>
+                                            <h4><a href="#" onClick={(e) => contact_modal(e) }> Contact Us<span><img src={img_arrow} alt="" /></span></a></h4>
                                         </div>
                                     </div>
                                 </div>
@@ -157,9 +167,7 @@ const Home = () => {
                         <div className="col-lg-6">
                             <div className="members-image">
                                 <BrowserView>
-                                    <Layer settings={{ speed: 0.2, type: ["translateX"] }}>
-                                        <img src={img_main_2} alt="partners" />
-                                    </Layer>
+                                    <img src={img_main_2} alt="partners" />
                                 </BrowserView>
                                 <MobileView>
                                     <img src={img_main_2} alt="partners" />
@@ -175,9 +183,7 @@ const Home = () => {
                     <div className="row">
                         <div className="col-lg-6">
                             <div className="emclass-image">
-                                <Layer settings={{ speed: -0.2, type: ["translateX"] }}>
-                                    <img src={img_main_3} alt="partners" />
-                                </Layer>
+                                <img src={img_main_3} alt="partners" />
                             </div>
                         </div>
                         <div className="col-lg-6">
@@ -198,7 +204,7 @@ const Home = () => {
                                                 experience with your advisors who will share their crafts, medical knowledge, and personal
                                                 experiences.</p>
                                             <div className="btn-section">
-                                                <h4><a href="" onClick={(e) => { e.preventDefault(); history.push('/emcalss') }}>Learn More<span><img src={img_arrow} alt="" /></span></a></h4>
+                                                <h4><a target="_blank" href='/emclass'>Learn More<span><img src={img_arrow} alt="" /></span></a></h4>
                                             </div>
                                         </div>
                                     </Fade>
@@ -226,7 +232,7 @@ const Home = () => {
                                             experience with your advisors who will share their crafts, medical knowledge, and personal
                                             experiences.</p>
                                         <div className="btn-section">
-                                            <h4><a href="" onClick={(e) => { e.preventDefault(); history.push('/emcalss') }}>Learn More<span><img src={img_arrow} alt="" /></span></a></h4>
+                                            <h4><a href="" target="_blank" href='/emclass'>Learn More<span><img src={img_arrow} alt="" /></span></a></h4>
                                         </div>
                                     </div>
                                 </div>
@@ -291,9 +297,7 @@ const Home = () => {
                         <div className="col-lg-6">
                             <div className="emborrow-image">
                                 <BrowserView>
-                                    <Layer settings={{ speed: 0.2, type: ["translateX"] }}>
-                                        <img src={img_main_4} alt="partners" />
-                                    </Layer>
+                                    <img src={img_main_4} alt="partners" />
                                 </BrowserView>
                                 <MobileView>
                                     <img src={img_main_4} alt="partners" />
@@ -313,7 +317,7 @@ const Home = () => {
                                     <a onClick={(e) => { e.preventDefault(); history.push('/') }} href="#"> <img src={img_logo_footer} alt="Logo" className="pb-30" /> </a>
                                     <nav className="nav-footer justify-content-center">
                                         <a onClick={(e) => { e.preventDefault(); history.push('/why-us') }} href="#">Why emHealth</a>
-                                        <a href="mailto:information@emhealthfertility.com">Contact Us</a> </nav>
+                                        <a  href="#" onClick={(e) => contact_modal(e) }>Contact Us</a> </nav>
                                     <nav className="nav-footer justify-content-center pt-20"> 
                                         <a target="_blank" href="https://www.instagram.com/emborrow/"><img src={img_ig} alt="" /></a> 
                                         <a target="_blank" href="https://www.facebook.com/emBorrow/"><img src={img_fb} alt="" /></a> 

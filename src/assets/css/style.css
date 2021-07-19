@@ -612,7 +612,7 @@ p {
 	background-color: #EFEFEF;
 	margin-top: -60px;
 	display: flex;
-	padding-left: 4%;
+	padding-left: 0;
 }
 .partners-area.partners_inpage {
 	position: relative;
@@ -620,7 +620,7 @@ p {
 	background-color: #EFEFEF;
 	margin-top: -100px;
 	display: flex;
-	padding-left: 4%;
+	padding-left: 0;
 }
 .partners_inn {
 	width: 100%;
@@ -773,7 +773,7 @@ p {
 	background-color: #EFEFEF;
 	margin-top: -230px;
 	display: flex;
-	padding-left: 4%;
+	padding-left: 0;
 }
 .emclass_inn {
 	width: 100%;
@@ -977,7 +977,7 @@ p {
 	background-color: #fff;
 	margin-top: 0px;
 	display: flex;
-	padding-left: 4%;
+	padding-left: 0;
 }
 .during-inn {
 	width: 100%;
@@ -1901,4 +1901,158 @@ h1 {
 	letter-spacing: 0;
 	line-height: 85px;
 	text-align: center;
+}
+.row {
+	margin-left: 0;
+	margin-right: 0;
+}
+.contact-modal-contain .header {
+	padding-top: 30px;
+	padding-right: 33px;
+	display: flex;
+	flex-direction: row-reverse;
+}
+.contact-modal-contain .header .close-button {
+	color: #50D0DB;
+	font-family: 'LatoWeb';
+	font-size: 20px;
+	font-weight: bold;
+	letter-spacing: 0;
+	line-height: 24px;
+	text-align: right;
+}
+.contact-modal-contain .header .close-button:hover {
+	cursor: pointer;
+}
+.contact-modal-contain .title {
+	color: #293045;
+	font-family: "league_spartanbold";
+	font-size: 65px;
+	letter-spacing: 0;
+	line-height: 86px;
+	padding-left: 100px;
+	text-align: right;
+}
+.contact-info {
+	border-top: solid 1px #AAAAAA;
+	padding-top: 40px;
+}
+.contact-modal-content {
+	height: 100vh;
+	padding: 0 !important;
+	margin: 'unset' !important;
+}
+.modal-content {
+	width: 1140px;
+	margin: auto;
+}
+@media (min-width: 576px) {
+	.modal-dialog {
+		max-width: unset;
+		margin: auto;
+	}
+}
+@media (min-width: 576px) {
+	.modal-dialog-centered {
+		min-height: unset !important;
+	}
+}
+
+ 
+.contact-info-item {
+	display: flex;
+	padding-left: 90px;
+    padding-bottom: 40px;
+}
+.contact-info-item .description {
+	color: #293045;
+	font-family: 'LatoWeb';
+	font-size: 20px;
+	letter-spacing: 0;
+	line-height: 24px;
+}
+.contact-info-item img {
+	margin-right: 20px;
+}
+.contact-modal-contain .col-md-7 {
+	padding: 50px;
+}
+.contact-modal-contain .input-element {
+	box-sizing: border-box;
+	height: 57px;
+	border: 1px solid #C0C0C0;
+	color: #9FA4B3;
+	font-family: 'LatoWeb';
+	font-size: 20px;
+	letter-spacing: 0;
+	line-height: 24px;
+	padding-left: 16px;
+	width: 100%;
+}
+.input-item {
+	margin-bottom: 25px;
+}
+.input-item .label {
+	color: #293045;
+	font-family: 'LatoWeb';
+	font-size: 20px;
+	letter-spacing: 0;
+	line-height: 24px;
+	margin-bottom: 15px;
+}
+.input-name-contain {
+	display: flex;
+	justify-content: space-between;
+}
+.input-name-contain .input-element:first-child{
+	margin-right: 20px;
+}
+.input-name-contain .input-element {
+	width: 50%;
+}
+.contact-modal-contain .input-element.text-area {
+	height: 150px;
+	padding: 16px;
+}
+.contact-modal-contain .input-element.text-area::placeholder {
+	color: #9FA4B3;
+	font-family: 'LatoWeb';
+	font-size: 20px;
+}
+.submit-button {
+	height: 56px;
+  	width: 186px;
+	color: #FFFFFF;
+	background-color: #50D0DB;
+	font-family: 'LatoWeb';
+	font-size: 20px;
+	font-weight: bold;
+	letter-spacing: 0;
+	line-height: 24px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.submit-button:hover {
+	cursor: pointer;
+}
+.submit-button:active {
+	background-color: #066972;
+}
+@media(max-width:768px) {
+	.contact-modal-content {
+		margin: '10px auto'
+	} 
+	.contact-modal-contain .title {
+		padding-left: 0;
+	}
+	.contact-info-item {
+		padding-left: 0;
+	}
+	.contact-modal-contain .col-md-7 {
+		padding: 0 10px;
+	}
+	.modal-content {
+		padding-bottom: 35px;
+	}
 }

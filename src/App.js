@@ -30,7 +30,7 @@ function App() {
           <RouteWithLayout
             component={New}
             exact
-            path='/emcalss'
+            path='/emclass'
             layout={NormalLayout}
           />
         </Switch>

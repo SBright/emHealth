@@ -19,12 +19,21 @@ import img_lk from '../assets/images/linkedin.svg';
 const Why = () => {
 
     const history = useHistory();
+    const [contact_modal_open, setContactModalOpen] = useState(false);
+
+    const contact_modal = (e) => {
+        e.preventDefault(); 
+        setContactModalOpen(true); 
+        setTimeout(() => {
+            setContactModalOpen(false);
+        }, 100);  
+    }
 
     return (
         <Parallax>
             {/* HEADER PART START */}
             <header className="header-area header-area_inn_pages">
-                <Navbar></Navbar>
+                <Navbar modalStatus={contact_modal_open}></Navbar>
             </header>
             {/* partners Part starts */}
             <section className="partners-area partners_inpage desk_view">
@@ -32,9 +41,7 @@ const Why = () => {
                     <div className="row">
                         <div className="col-lg-6">
                             <div className="partners-image">
-                                <Layer settings={{ speed: -0.2, type: ["translateX"] }}>
-                                    <img src={img_main_1} alt="partners" />
-                                </Layer>
+                                <img src={img_main_1} alt="partners" />
                             </div>
                         </div>
                         <div className="col-lg-6">
@@ -170,14 +177,7 @@ const Why = () => {
                         </div>
                         <div className="col-lg-6  ">
                             <div className="personal-image">
-                                <BrowserView>
-                                    <Layer settings={{ speed: 0.2, type: ["translateX"] }}>
-                                        <img src={img_im1} alt="" />
-                                    </Layer>
-                                </BrowserView>
-                                <MobileView>
-                                    <img src={img_im1} alt="" />
-                                </MobileView>
+                                <img src={img_im1} alt="" />
                             </div>
                         </div>
                     </div>
@@ -189,9 +189,7 @@ const Why = () => {
                         <div className="col-lg-6">
                             <div className="during-image">
                                 <BrowserView>
-                                    <Layer settings={{ speed: -0.2, type: ["translateX"] }}>
-                                        <img src={img_im2} alt="partners" />
-                                    </Layer>
+                                    <img src={img_im2} alt="partners" />
                                 </BrowserView>
                             </div>
                         </div>
@@ -328,14 +326,7 @@ const Why = () => {
                         </div>
                         <div className="col-lg-6">
                             <div className="emclass-inpage-image">
-                                <BrowserView>
-                                    <Layer settings={{ speed: 0.2, type: ["translateX"] }}>
-                                        <img src={img_im3} alt="partners" />
-                                    </Layer>
-                                </BrowserView>
-                                <MobileView>
-                                    <img src={img_im3} alt="partners" />
-                                </MobileView>
+                                <img src={img_im3} alt="partners" />
                             </div>
                         </div>
                     </div>
@@ -346,11 +337,7 @@ const Why = () => {
                     <div className="row">
                         <div className="col-lg-6">
                             <div className="emborrow-inpage-area-image">
-                                <BrowserView>
-                                    <Layer settings={{ speed: -0.2, type: ["translateX"] }}>
-                                        <img src={img_im4} alt="partners" />
-                                    </Layer>
-                                </BrowserView>
+                                <img src={img_im4} alt="partners" />
                             </div>
                         </div>
                         <div className="col-lg-6">
@@ -419,7 +406,7 @@ const Why = () => {
                                     <a onClick={(e) => { e.preventDefault(); history.push('/') }} href="#"> <img src={img_logo_footer} alt="Logo" className="pb-30" /> </a>
                                     <nav className="nav-footer justify-content-center"> 
                                         <a onClick={(e) => { e.preventDefault(); history.push('/') }} href="#">Home</a> 
-                                        <a href="mailto:information@emhealthfertility.com">Contact Us</a> 
+                                        <a href="#" onClick={(e) => contact_modal(e) }>Contact Us</a> 
                                     </nav>
                                     <nav className="nav-footer justify-content-center pt-20">
                                         <a target="_blank" href="https://www.instagram.com/emborrow/"><img src={img_ig} alt="" /></a>
