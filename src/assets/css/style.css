@@ -1931,7 +1931,6 @@ h1 {
 	letter-spacing: 0;
 	line-height: 86px;
 	padding-left: 100px;
-	text-align: right;
 }
 .contact-info {
 	border-top: solid 1px #AAAAAA;
@@ -1945,6 +1944,12 @@ h1 {
 .modal-content {
 	width: 1140px;
 	margin: auto;
+	border: unset !important;
+}
+.contact-modal-content .alert-contain {
+	color: red;
+	font-size: 20px;
+	margin-bottom: 20px;
 }
 @media (min-width: 576px) {
 	.modal-dialog {

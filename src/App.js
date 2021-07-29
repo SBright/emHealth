@@ -1,5 +1,5 @@
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Switch,
 } from 'react-router-dom';
 import RouteWithLayout from './components/RouteWithLayout';
